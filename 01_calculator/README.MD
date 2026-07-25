@@ -1,20 +1,13 @@
-# Calculator
+# Calculator Project
 
-## Version
-v1.0.0
+## Version 3
 
-## Description
-A simple calculator built while learning Python.
-
-## Features
-- Add two numbers
-
-## Python Concepts
-- print()
-- input()
-- variables
-- int()
-- arithmetic operator (+)
-
-## Status
-In Progress
+Features:
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Exit Option
+- Runs continuously using while loop
+- Handles invalid menu choices
+- Prevents division by zero
