@@ -1,14 +1,29 @@
+def add(first_number, second_number):
+    return first_number + second_number
 
-while True:
-    print("Simple calculator")
+def subtract(first_number, second_number):
+    return first_number - second_number
 
+def multiply(first_number, second_number):
+    return first_number * second_number
+
+def divide(first_number, second_number):
+    return first_number / second_number
+
+def show_menu():
+    print("Simple Calculator")
     print("1.Addition")
-    print("2.Substraction")
+    print("2.Subtraction")
     print("3.Multiplication")
     print("4.Division")
     print("5.Exit")
 
+
+while True:
+    show_menu()
+
     choice = int(input("Enter your Choice:- "))
+
     if choice == 5:
         print("Thank You")
         break
@@ -17,21 +32,24 @@ while True:
         first_number = int(input("Enter your First Number:- "))
         second_number = int(input("Enter your Second Number:- "))
 
-
     if choice == 1:
-        result = first_number + second_number
+        result = add(first_number, second_number)
         print("Result =", result)
+
     elif choice == 2:
-        result = first_number - second_number
+        result = subtract(first_number,  second_number)
         print("Result =", result)
+
     elif choice == 3:
-        result = first_number * second_number
+        result = multiply(first_number, second_number)
         print("Result =", result)
+
     elif choice == 4:
         if second_number == 0:
-            print("Cannot Divide By zero")
+            print("Cannot Divide By Zero")
         else:
-            result = first_number / second_number
+            result = divide(first_number, second_number)
             print("Result =", result)
+
     else:
         print("Invalid Choice!")
