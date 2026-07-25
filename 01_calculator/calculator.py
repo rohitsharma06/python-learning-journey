@@ -1,6 +1,18 @@
 print("Simple calculator")
+
+print("1.Addition")
+print("2.Substraction")
+
+choice = int(input("Enter your Choice:- "))
+
 first_number = int(input("Enter your First Number:- "))
 second_number = int(input("Enter your Second Number:- "))
 
-result = first_number + second_number
-print("Result =",result)
+if choice == 1:
+    result = first_number + second_number
+    print("Result =", result)
+elif choice == 2:
+    result = first_number - second_number
+    print("Result =", result)
+else:
+    print("Invalid Choice!") 
