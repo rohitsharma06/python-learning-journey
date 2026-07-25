@@ -1,13 +1,18 @@
-# Calculator Project
+## Version 5 - Functions
 
-## Version 3
+### New Features
+- Created separate functions for:
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+  - Menu Display
+- Used `return` to send calculation results back.
+- Reduced code repetition by using reusable functions.
 
-Features:
-- Addition
-- Subtraction
-- Multiplication
-- Division
-- Exit Option
-- Runs continuously using while loop
-- Handles invalid menu choices
-- Prevents division by zero
+### Concepts Learned
+- Functions (`def`)
+- Function Calling
+- Parameters
+- Return Statement
+- Code Reusability
