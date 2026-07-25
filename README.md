@@ -1,7 +1,26 @@
-# Python Learning Journey
+# Calculator
 
-This repository contains all the Python projects that I build while learning Python from basics to advanced.
+## Version
+v2.0.0
 
-## Projects
+## Description
+A simple calculator built while learning Python.
 
-- 01 - Calculator (In Progress)
+## Features
+- Addition
+- Subtraction
+- User choice menu
+- Invalid choice handling
+
+## Python Concepts
+- print()
+- input()
+- variables
+- int()
+- if
+- elif
+- else
+- comparison operator (==)
+
+## Status
+In Progress

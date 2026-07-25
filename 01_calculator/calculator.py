@@ -15,4 +15,4 @@ elif choice == 2:
     result = first_number - second_number
     print("Result =", result)
 else:
-    print("Invalid Choice!") 
+    print("Invalid Choice!")
