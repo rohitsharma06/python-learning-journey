@@ -10,6 +10,16 @@ def multiply(first_number, second_number):
 def divide(first_number, second_number):
     return first_number / second_number
 
+def get_number(message):
+    while True:
+        try:
+            number = int(input(message))
+            return number
+
+        except ValueError:
+            print("Invalid Input! Please enter a number.")
+
+
 def show_menu():
     print("Simple Calculator")
     print("1.Addition")
@@ -18,19 +28,18 @@ def show_menu():
     print("4.Division")
     print("5.Exit")
 
-
 while True:
-    show_menu()
 
-    choice = int(input("Enter your Choice:- "))
+    show_menu()
+    choice = get_number("Enter your Choice:- ")
 
     if choice == 5:
         print("Thank You")
         break
 
     if choice >= 1 and choice <= 4:
-        first_number = int(input("Enter your First Number:- "))
-        second_number = int(input("Enter your Second Number:- "))
+        first_number = get_number("Enter your First Number:- ")
+        second_number = get_number("Enter your Second Number:- ")
 
     if choice == 1:
         result = add(first_number, second_number)

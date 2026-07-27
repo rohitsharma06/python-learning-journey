@@ -82,3 +82,20 @@ A simple calculator project built step by step while learning Python.
 - Parameters
 - Return Statement
 - Code Reusability
+---
+
+# Version 6 - Exception Handling & Input Validation
+
+## New Features
+- Added exception handling using `try` and `except`.
+- Prevented the calculator from crashing on invalid input.
+- Created a reusable `get_number()` function.
+- Used `ValueError` to catch invalid numeric input.
+- Improved code reusability and readability.
+
+## Concepts Learned
+- `try`
+- `except`
+- `ValueError`
+- Input Validation
+- Reusable Functions
