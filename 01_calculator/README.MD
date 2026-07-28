@@ -99,3 +99,21 @@ A simple calculator project built step by step while learning Python.
 - `ValueError`
 - Input Validation
 - Reusable Functions
+
+---
+
+# Version 7 - Calculation History
+
+## New Features
+- Added calculation history using a list.
+- Stored every calculation using `append()`.
+- Added a new **History** menu option.
+- Displayed history using a `for` loop.
+- Handled empty history using `len()`.
+
+## Concepts Learned
+- Lists (`[]`)
+- `append()`
+- `for` loop with lists
+- `len()`
+- Data storage
