@@ -10,6 +10,20 @@ def multiply(first_number, second_number):
 def divide(first_number, second_number):
     return first_number / second_number
 
+operations = {
+    1: add,
+    2: subtract,
+    3: multiply,
+    4: divide
+}
+
+symbols = {
+    1: "+",
+    2: "-",
+    3: "*",
+    4: "/"
+}
+
 def get_number(message):
     while True:
         try:
@@ -18,6 +32,20 @@ def get_number(message):
 
         except ValueError:
             print("Invalid Input! Please enter a number.")
+
+
+def get_two_numbers():
+    first_number = get_number("Enter your First Number:- ")
+    second_number = get_number("Enter your Second Number:- ")
+
+    return first_number, second_number
+
+def show_result(result):
+    print("====================")
+    print("Result =", result)
+    print("====================")
+
+
 
 history = []
 
@@ -40,33 +68,36 @@ while True:
         break
 
     if choice == 1:
-        first_number = get_number("Enter your First Number:- ")
-        second_number = get_number("Enter your Second Number:- ")
-        result = add(first_number, second_number)
-        print("Result =", result)
+        first_number, second_number = get_two_numbers()
+        result = operations[choice](first_number, second_number)
+        show_result(result)
 
-        history.append(f"{first_number} + {second_number} = {result}")
+        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
     elif choice == 2:
-        first_number = get_number("Enter your First Number:- ")
-        second_number = get_number("Enter your Second Number:- ")
-        result = subtract(first_number,  second_number)
-        print("Result =", result)
+        first_number, second_number = get_two_numbers()
+        result = operations[choice](first_number, second_number)
+        show_result(result)
+
+        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
     elif choice == 3:
-        first_number = get_number("Enter your First Number:- ")
-        second_number = get_number("Enter your Second Number:- ")
-        result = multiply(first_number, second_number)
-        print("Result =", result)
+        first_number, second_number = get_two_numbers()
+        result = operations[choice](first_number, second_number)
+        show_result(result)
+
+        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
     elif choice == 4:
-        first_number = get_number("Enter your First Number:- ")
-        second_number = get_number("Enter your Second Number:- ")
+        first_number, second_number = get_two_numbers()
         if second_number == 0:
             print("Cannot Divide By Zero")
         else:
-            result = divide(first_number, second_number)
-            print("Result =", result)
+            result = operations[choice](first_number, second_number)
+            show_result(result)
+
+            history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
+
     elif choice == 6:
         if len(history) == 0:
             print("No History Available")
