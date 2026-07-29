@@ -1,4 +1,4 @@
 .idea/
 __pycache__/
 *.pyc
-01_calculator/practice.py
+practice.py
