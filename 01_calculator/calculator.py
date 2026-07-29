@@ -102,7 +102,6 @@ while True:
             result = operations[choice](first_number, second_number)
             show_result(result)
 
-
             file = open("history.txt", "a")
             file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
             file.close()
