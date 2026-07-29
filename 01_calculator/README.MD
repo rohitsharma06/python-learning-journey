@@ -135,3 +135,24 @@ A simple calculator project built step by step while learning Python.
 - Code Refactoring
 - `continue` Statement
 - Cleaner and Reusable Code
+
+## Version 9 - File Handling
+
+### New Features
+- Saved every calculation to `history.txt`.
+- Used Append Mode (`"a"`) to keep previous history.
+- Displayed calculation history by reading from `history.txt`.
+- Added exception handling to avoid crashes when the history file does not exist.
+- Calculator history now remains available even after closing and reopening the program.
+
+### Concepts Learned
+- File Handling
+- Write Mode (`"w"`)
+- Append Mode (`"a"`)
+- Read Mode (`"r"`)
+- `open()`
+- `write()`
+- `read()`
+- `close()`
+- `FileNotFoundError`
+- Persistent Data Storage

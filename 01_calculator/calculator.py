@@ -75,12 +75,9 @@ while True:
 
         history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
-    elif choice in valid_operations:
-        first_number, second_number = get_two_numbers()
-        result = operations[choice](first_number, second_number)
-        show_result(result)
-
-        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
+        file = open("history.txt","a")
+        file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
+        file.close()
 
     elif choice in valid_operations:
         first_number, second_number = get_two_numbers()
@@ -88,6 +85,21 @@ while True:
         show_result(result)
 
         history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
+
+        file = open("history.txt", "a")
+        file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
+        file.close()
+
+    elif choice in valid_operations:
+        first_number, second_number = get_two_numbers()
+        result = operations[choice](first_number, second_number)
+        show_result(result)
+
+        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
+
+        file = open("history.txt", "a")
+        file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
+        file.close()
 
     elif choice in valid_operations:
         first_number, second_number = get_two_numbers()
@@ -99,16 +111,25 @@ while True:
 
             history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
+            file = open("history.txt", "a")
+            file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
+            file.close()
+
     elif choice == 6:
-        if len(history) == 0:
+        try:
+            file = open("history.txt","r")
+            data = file.read()
+
+            if data == "":
+                print("No history Available")
+            else:
+                print("------ History ------")
+                print(data)
+                print("---------------------")
+
+            file.close()
+        except FileNotFoundError:
             print("No History Available")
-        else:
-            print("------ History ------")
-            for item in history:
-                print(item)
-
-            print("---------------------")
-
 
     else:
         print("Invalid Choice!")
