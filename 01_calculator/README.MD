@@ -117,3 +117,21 @@ A simple calculator project built step by step while learning Python.
 - `for` loop with lists
 - `len()`
 - Data storage
+
+## Version 8 - Code Refactoring with Dictionaries
+
+### New Features
+- Created an `operations` dictionary to store calculator functions.
+- Created a `symbols` dictionary for operation symbols.
+- Removed repeated code for Addition, Subtraction, Multiplication, and Division.
+- Used a single block to handle all arithmetic operations.
+- Added `continue` to safely handle division by zero.
+- Made the calculator code cleaner and easier to maintain.
+
+### Concepts Learned
+- Dictionary (`dict`)
+- Key-Value Pairs
+- Functions as Dictionary Values
+- Code Refactoring
+- `continue` Statement
+- Cleaner and Reusable Code

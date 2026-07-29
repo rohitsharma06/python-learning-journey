@@ -45,9 +45,10 @@ def show_result(result):
     print("Result =", result)
     print("====================")
 
-
-
 history = []
+
+valid_operations = [1, 2, 3, 4]
+
 
 def show_menu():
     print("Simple Calculator")
@@ -67,28 +68,28 @@ while True:
         print("Thank You")
         break
 
-    if choice == 1:
+    if choice in valid_operations:
         first_number, second_number = get_two_numbers()
         result = operations[choice](first_number, second_number)
         show_result(result)
 
         history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
-    elif choice == 2:
+    elif choice in valid_operations:
         first_number, second_number = get_two_numbers()
         result = operations[choice](first_number, second_number)
         show_result(result)
 
         history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
-    elif choice == 3:
+    elif choice in valid_operations:
         first_number, second_number = get_two_numbers()
         result = operations[choice](first_number, second_number)
         show_result(result)
 
         history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
-    elif choice == 4:
+    elif choice in valid_operations:
         first_number, second_number = get_two_numbers()
         if second_number == 0:
             print("Cannot Divide By Zero")
