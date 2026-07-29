@@ -45,8 +45,6 @@ def show_result(result):
     print("Result =", result)
     print("====================")
 
-history = []
-
 valid_operations = [1, 2, 3, 4]
 
 
@@ -73,8 +71,6 @@ while True:
         result = operations[choice](first_number, second_number)
         show_result(result)
 
-        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
-
         file = open("history.txt","a")
         file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
         file.close()
@@ -84,7 +80,6 @@ while True:
         result = operations[choice](first_number, second_number)
         show_result(result)
 
-        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
         file = open("history.txt", "a")
         file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
@@ -94,8 +89,6 @@ while True:
         first_number, second_number = get_two_numbers()
         result = operations[choice](first_number, second_number)
         show_result(result)
-
-        history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
         file = open("history.txt", "a")
         file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
@@ -109,7 +102,6 @@ while True:
             result = operations[choice](first_number, second_number)
             show_result(result)
 
-            history.append(f"{first_number} {symbols[choice]} {second_number} = {result}")
 
             file = open("history.txt", "a")
             file.write(f"{first_number} {symbols[choice]} {second_number} = {result}\n")
