@@ -12,7 +12,10 @@ uppercase = [
 
 numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
-character = lowercase + uppercase + numbers
+symbols = ["!", "@", "#", "$", "%", "^", "&", "*","(",")","/","-","|"]
+
+
+character = lowercase + uppercase + numbers + symbols
 
 num = int(input("Enter the number of characters: "))
 password = ""
