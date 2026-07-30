@@ -40,19 +40,32 @@ A command-line calculator built step by step while learning Python fundamentals.
 📁 Project Folder: `01_calculator`
 
 ---
+### 🚧 02. Password Generator
 
-## 🚧 Upcoming Projects
+A command-line password generator built using Python.
 
-- 🔐 Password Generator
-- 🎯 Guess The Number
-- ✊ Rock Paper Scissors
-- 📒 Contact Book
-- ✅ Todo Application
-- 🎓 Student Management System
-- 🧮 OOP Based Projects
-- 🌐 Django Web Projects
+**Version 1 - Basic Password Generator**
 
----
+**Features**
+- User can choose the password length.
+- Generates random passwords.
+- Uses lowercase letters.
+- Uses uppercase letters.
+- Uses numbers.
+
+**Python Concepts Used**
+- `import`
+- `random.choice()`
+- Lists
+- Combining Lists
+- `input()`
+- Type Casting
+- `for` Loop
+- `range()`
+- String Building using `+=`
+
+📁 Project Folder: `02_password_generator`
+
 
 ## 🎯 Goal
 
