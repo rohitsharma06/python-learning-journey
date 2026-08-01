@@ -14,11 +14,30 @@ numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
 symbols = ["!", "@", "#", "$", "%", "^", "&", "*","(",")","/","-","|"]
 
+include_uppercase = input("Include Uppercase? (y/n):")
+include_numbers   = input("Include Numbers? (y/n):")
+include_symbols   = input("Include Symbols? (y/n):")
 
-character = lowercase + uppercase + numbers + symbols
+character = lowercase
+
+if include_uppercase == "y":
+    character += uppercase
+
+if include_numbers == "y":
+    character += numbers
+
+if include_symbols == "y":
+    character += symbols
 
 num = int(input("Enter the number of characters: "))
-password = random.choice(symbols)+""
+
+if include_symbols == "y":
+    password = random.choice(symbols)
+    loop_count = num -1
+else:
+    password = ""
+    loop_count = num
+
 for _ in range(num - 1):
     password += random.choice(character)
 

@@ -33,3 +33,20 @@ A simple command-line password generator built using Python.
 - `random.choice()`
 - String Concatenation
 - Loop Count (`range(num - 1)`)
+
+## Version 3 - User Customization
+
+### Features
+- User can choose whether to include:
+  - Uppercase letters
+  - Numbers
+  - Symbols
+- Password is generated based on the selected options.
+- Password length remains correct for all combinations.
+
+### Concepts Practiced
+- Conditional Statements (`if`)
+- List Concatenation (`+=`)
+- User Input (`input()`)
+- Variables
+- Program Logic
