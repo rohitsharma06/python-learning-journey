@@ -50,3 +50,19 @@ A simple command-line password generator built using Python.
 - User Input (`input()`)
 - Variables
 - Program Logic
+
+## Version 4 - Strong Password Generation
+
+### Features
+- Guarantees at least one lowercase letter.
+- Guarantees at least one uppercase letter (if selected).
+- Guarantees at least one number (if selected).
+- Guarantees at least one symbol (if selected).
+- Randomizes the character order using `random.shuffle()`.
+
+### Concepts Practiced
+- Lists
+- append()
+- len()
+- random.shuffle()
+- "".join()

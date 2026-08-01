@@ -31,14 +31,38 @@ if include_symbols == "y":
 
 num = int(input("Enter the number of characters: "))
 
-if include_symbols == "y":
-    password = random.choice(symbols)
-    loop_count = num -1
-else:
-    password = ""
-    loop_count = num
 
-for _ in range(num - 1):
-    password += random.choice(character)
+# if include_symbols == "y":
+#     password = random.choice(symbols)
+#     loop_count = num -1
+# else:
+#     password = ""
+#     loop_count = num
+#
+# for _ in range(num - 1):
+#     password += random.choice(character)
+#
+# print(password)
+
+
+password = []
+
+password.append(random.choice(lowercase))
+
+if include_uppercase == "y":
+    password.append(random.choice(uppercase))
+if include_numbers == "y":
+    password.append(random.choice(numbers))
+if include_symbols == "y":
+    password.append(random.choice(symbols))
+
+
+remaining_characters = num - len(password)
+
+for _ in range(remaining_characters):
+    password.append(random.choice(character))
+
+random.shuffle(password)
+password = "".join(password)
 
 print(password)
