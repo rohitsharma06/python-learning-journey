@@ -18,8 +18,8 @@ symbols = ["!", "@", "#", "$", "%", "^", "&", "*","(",")","/","-","|"]
 character = lowercase + uppercase + numbers + symbols
 
 num = int(input("Enter the number of characters: "))
-password = ""
-for _ in range(num):
+password = random.choice(symbols)+""
+for _ in range(num - 1):
     password += random.choice(character)
 
 print(password)

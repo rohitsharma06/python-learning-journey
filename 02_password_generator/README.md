@@ -21,3 +21,15 @@ A simple command-line password generator built using Python.
 - `for` loop
 - `range()`
 - String building using `+=`
+
+## Version 2 - Special Characters
+
+### Features
+- Added special characters.
+- Password always contains at least one special character.
+
+### Concepts Practiced
+- List Combination
+- `random.choice()`
+- String Concatenation
+- Loop Count (`range(num - 1)`)
