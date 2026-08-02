@@ -19,9 +19,13 @@ while True:
         max_attempt = 5
 
     while True:
-        guess = int(input("Guess a number between 1 to 10:- "))
+        try:
+            guess = int(input("Guess a number between 1 to 10:- "))
+        except ValueError:
+            print("Please Enter numbers only")
+            continue
 
-        attempt += 1
+        attempts += 1
         print(f"Attempt Left: {max_attempt - attempts}")
         if guess == secret_number:
             print("Congratulations! You guessed correctly!")

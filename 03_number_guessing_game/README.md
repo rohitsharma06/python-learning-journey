@@ -65,3 +65,16 @@
 - Nested while Loops
 - Outer Loop
 - Inner Loop
+
+## Version 6
+
+### New Features
+- Prevents program from crashing on invalid input
+- Shows an error message for non-numeric input
+- Asks the user to enter the guess again
+
+### New Concepts Learned
+- try
+- except
+- ValueError
+- continue
