@@ -92,3 +92,15 @@ A simple command-line password generator built using Python.
 - range()
 - Nested loops
 - f-string
+
+## Version 7 - Password Strength Checker
+
+### Features
+- Checks password strength based on length.
+- Displays Weak, Medium, or Strong.
+- Cleaner output using separators.
+
+### Concepts Practiced
+- if / elif / else
+- len()
+- Conditional Logic

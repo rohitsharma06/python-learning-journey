@@ -73,3 +73,9 @@ for i in range(password_count):
     password = "".join(password)
 
     print(f"{i + 1}. {password}")
+
+    if len(password) >= 12:
+        print("Strength : Strong")
+    else:
+        print("Strength : Weak")
+    print("------------------------")
