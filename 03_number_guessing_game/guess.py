@@ -1,5 +1,15 @@
 import random
 
+def get_max_attempts(difficulty):
+    if difficulty == 1:
+        return 10
+
+    elif difficulty == 2:
+        return 7
+
+    else:
+        return 5
+
 while True:
 
     secret_number = random.randint(1,10)
@@ -19,12 +29,7 @@ while True:
 
     attempts = 0
 
-    if difficulty == 1:
-        max_attempt =10
-    elif difficulty == 2:
-        max_attempt = 7
-    else:
-        max_attempt = 5
+    max_attempts = get_max_attempts(difficulty)
 
     while True:
         try:

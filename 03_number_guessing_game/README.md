@@ -102,3 +102,15 @@
 - Input Validation
 - Range Checking
 - Defensive Programming
+
+## Version 9
+
+### New Features
+- Moved difficulty logic into a separate function
+- Improved code readability
+- Reduced repeated code
+
+### New Concepts Learned
+- Function Reusability
+- return
+- Code Refactoring
