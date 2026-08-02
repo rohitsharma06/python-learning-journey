@@ -13,6 +13,10 @@ while True:
         print("Please enter number choice only")
         continue
 
+    if difficulty < 1 or difficulty > 3:
+        print("Please enter 1, 2, or 3 only.")
+        continue
+
     attempts = 0
 
     if difficulty == 1:

@@ -90,3 +90,15 @@
 - Logical OR (`or`)
 - Range Validation
 - continue
+
+## Version 8
+
+### New Features
+- Validates difficulty selection
+- Accepts only 1, 2, or 3
+- Prevents invalid difficulty choices
+
+### New Concepts Learned
+- Input Validation
+- Range Checking
+- Defensive Programming
