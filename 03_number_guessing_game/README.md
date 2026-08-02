@@ -78,3 +78,15 @@
 - except
 - ValueError
 - continue
+
+## Version 7
+
+### New Features
+- Validates guess range (1 to 10)
+- Rejects numbers outside the valid range
+- Continues asking until a valid guess is entered
+
+### New Concepts Learned
+- Logical OR (`or`)
+- Range Validation
+- continue

@@ -7,7 +7,11 @@ while True:
     print("Select Difficulty:")
     print("1.Easy \n2.Medium \n3.Hard")
 
-    difficulty = int(input("Enter your choice: "))
+    try:
+        difficulty = int(input("Enter your choice: "))
+    except ValueError:
+        print("Please enter number choice only")
+        continue
 
     attempts = 0
 
@@ -23,6 +27,10 @@ while True:
             guess = int(input("Guess a number between 1 to 10:- "))
         except ValueError:
             print("Please Enter numbers only")
+            continue
+
+        if guess < 1 or guess > 10:
+            print("Please enter a number between 1 and 10.")
             continue
 
         attempts += 1
