@@ -47,26 +47,29 @@ while True:
         break
     print(f"Password length should be at least {minimum_length}.")
 
+password_count = int(input("How many passwords do you want to generate? "))
 
+for i in range(password_count):
 
-password = []
+    password = []
 
-password.append(random.choice(lowercase))
+    password.append(random.choice(lowercase))
 
-if include_uppercase == "y":
-    password.append(random.choice(uppercase))
-if include_numbers == "y":
-    password.append(random.choice(numbers))
-if include_symbols == "y":
-    password.append(random.choice(symbols))
+    if include_uppercase == "y":
+        password.append(random.choice(uppercase))
 
+    if include_numbers == "y":
+        password.append(random.choice(numbers))
 
-remaining_characters = num - len(password)
+    if include_symbols == "y":
+        password.append(random.choice(symbols))
 
-for _ in range(remaining_characters):
-    password.append(random.choice(character))
+    remaining_characters = num - len(password)
 
-random.shuffle(password)
-password = "".join(password)
+    for _ in range(remaining_characters):
+        password.append(random.choice(character))
 
-print(password)
+    random.shuffle(password)
+    password = "".join(password)
+
+    print(f"{i + 1}. {password}")

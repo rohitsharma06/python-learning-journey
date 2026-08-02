@@ -79,3 +79,16 @@ A simple command-line password generator built using Python.
 - Input Validation
 - break
 - f-string
+
+## Version 6 - Generate Multiple Passwords
+
+### Features
+- Generate multiple passwords in one run.
+- User can choose how many passwords to generate.
+- Displays passwords with numbering.
+
+### Concepts Practiced
+- for loop
+- range()
+- Nested loops
+- f-string
