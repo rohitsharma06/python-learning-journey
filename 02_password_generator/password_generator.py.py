@@ -1,5 +1,6 @@
 import random
 
+
 lowercase = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
     "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
@@ -29,20 +30,23 @@ if include_numbers == "y":
 if include_symbols == "y":
     character += symbols
 
-num = int(input("Enter the number of characters: "))
+minimum_length = 1
+if include_uppercase == "y":
+    minimum_length += 1
 
+if include_numbers == "y":
+    minimum_length += 1
 
-# if include_symbols == "y":
-#     password = random.choice(symbols)
-#     loop_count = num -1
-# else:
-#     password = ""
-#     loop_count = num
-#
-# for _ in range(num - 1):
-#     password += random.choice(character)
-#
-# print(password)
+if include_symbols == "y":
+    minimum_length += 1
+
+while True:
+    num = int(input("Enter the number of characters: "))
+
+    if num >= minimum_length:
+        break
+    print(f"Password length should be at least {minimum_length}.")
+
 
 
 password = []

@@ -66,3 +66,16 @@ A simple command-line password generator built using Python.
 - len()
 - random.shuffle()
 - "".join()
+
+## Version 5 - Input Validation
+
+### Features
+- Validates the minimum password length.
+- Prevents users from entering an invalid password length.
+- Keeps asking until valid input is entered.
+
+### Concepts Practiced
+- while loop
+- Input Validation
+- break
+- f-string
