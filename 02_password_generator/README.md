@@ -104,3 +104,34 @@ A simple command-line password generator built using Python.
 - if / elif / else
 - len()
 - Conditional Logic
+
+# Final Version
+
+## Features
+- Generate passwords of custom length
+- Include uppercase letters
+- Include numbers
+- Include symbols
+- Generate multiple passwords
+- Validate minimum password length
+- Display password strength
+- Organized using functions
+
+## Python Concepts Used
+- Variables
+- Lists
+- Strings
+- if / elif / else
+- while loop
+- for loop
+- Functions
+- Parameters
+- return
+- append()
+- copy()
+- join()
+- len()
+- random.choice()
+- random.shuffle()
+- Input Validation
+- Code Refactoring
