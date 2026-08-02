@@ -114,3 +114,15 @@
 - Function Reusability
 - return
 - Code Refactoring
+
+## Version 10
+
+### New Features
+- Moved win message into a separate function
+- Moved game over message into a separate function
+- Reduced duplicate print statements
+
+### New Concepts Learned
+- Function Reusability
+- Code Refactoring
+- Cleaner Code Structure
