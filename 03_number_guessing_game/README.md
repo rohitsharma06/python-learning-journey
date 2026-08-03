@@ -139,3 +139,17 @@
 - Program Entry Point
 - Better Code Organization
 
+## Version 12
+
+### New Features
+- Added game statistics
+- Tracks total games played
+- Tracks total games won
+- Tracks total games lost
+- Displays statistics before exiting
+
+### New Concepts Learned
+- State Management
+- Counter Variables
+- += Operator
+- Tracking Program Data

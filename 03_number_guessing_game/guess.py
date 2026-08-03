@@ -20,6 +20,9 @@ def show_game_over(secret_number):
 
 
 def main():
+    games_played = 0
+    games_won = 0
+    games_lost = 0
 
     while True:
 
@@ -56,24 +59,35 @@ def main():
             attempts += 1
             print(f"Attempt Left: {max_attempts - attempts}")
             if guess == secret_number:
+                games_won += 1
                 show_win_message(attempts)
                 break
 
             elif guess > secret_number:
                 print("Your guess was too high!")
                 if attempts == max_attempts:
+                    games_lost += 1
                     show_game_over(secret_number)
                     break
 
             else:
                 print("Your guess is too low!")
                 if attempts == max_attempts:
+                    games_lost += 1
                     show_game_over(secret_number)
                     break
 
+        games_played += 1
         play_again = input("Do you want to play again? (y/n): ")
 
         if play_again == "n":
+
+            print("\n========== Game Statistics ==========")
+            print(f"Games Played : {games_played}")
+            print(f"Games Won    : {games_won}")
+            print(f"Games Lost   : {games_lost}")
+            print("=====================================")
+
             print("Thank you for playing!")
             break
 main()
