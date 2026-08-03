@@ -4,6 +4,15 @@
 
 A Python console-based Rock Paper Scissors game built version by version while learning Python fundamentals.
 
-## Status
+## Version 1
 
-🚧 Project Started
+### Features
+- Displayed game menu
+- Accepted player choice
+- Generated computer choice
+- Displayed both player and computer choices
+
+### New Concepts Learned
+- Lists
+- List Indexing
+- random.choice()
