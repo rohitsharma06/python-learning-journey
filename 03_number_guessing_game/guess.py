@@ -11,12 +11,16 @@ def get_max_attempts(difficulty):
         return 5
 
 def show_win_message(attempts):
-    print("Congratulations! You guessed correctly!")
+    print("\n----------------------------------------")
+    print("🎉 Congratulations!")
     print(f"You guessed the number in {attempts} attempts.")
+    print("----------------------------------------")
 
 def show_game_over(secret_number):
-    print("Game Over")
+    print("\n----------------------------------------")
+    print("Game Over!")
     print(f"The correct number was: {secret_number}")
+    print("----------------------------------------")
 
 
 def main():
@@ -28,8 +32,17 @@ def main():
 
         secret_number = random.randint(1,10)
 
-        print("Select Difficulty:")
-        print("1.Easy \n2.Medium \n3.Hard")
+        print("\n========================================")
+        print("        NUMBER GUESSING GAME")
+        print("========================================")
+
+        print("\nSelect Difficulty:\n")
+
+        print("1. Easy")
+        print("2. Medium")
+        print("3. Hard")
+
+        print("----------------------------------------")
 
         try:
             difficulty = int(input("Enter your choice: "))

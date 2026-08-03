@@ -164,3 +164,51 @@
 - Percentage Formula
 - Float Formatting (`:.2f`)
 - Converting Data into Meaningful Information
+
+## Version 14
+
+### New Features
+- Added professional console UI
+- Added game banner
+- Improved difficulty menu
+- Improved win and game over messages
+- Better spacing and formatting
+
+### New Concepts Learned
+- Console UI Design
+- User Experience (UX)
+- Clean Output Formatting
+
+# Final Project Summary
+
+## Features
+
+- Guess a random number
+- Easy, Medium and Hard difficulty
+- Limited attempts
+- Input validation
+- Range validation
+- Play again option
+- Game statistics
+- Win percentage
+- Professional console UI
+
+## Python Concepts Used
+
+- Variables
+- Lists
+- Functions
+- Parameters
+- Return
+- While Loop
+- Nested Loop
+- If / Else
+- try / except
+- Random Module
+- f-Strings
+- State Management
+- Code Refactoring
+
+## Status
+
+✅ Project Completed
