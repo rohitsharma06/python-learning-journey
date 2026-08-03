@@ -126,3 +126,16 @@
 - Function Reusability
 - Code Refactoring
 - Cleaner Code Structure
+
+## Version 11
+
+### New Features
+- Moved the complete game into the `main()` function
+- Improved program structure
+- Created a clear entry point for the application
+
+### New Concepts Learned
+- main() Function
+- Program Entry Point
+- Better Code Organization
+
