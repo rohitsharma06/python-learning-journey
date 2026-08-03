@@ -82,12 +82,16 @@ def main():
 
         if play_again == "n":
 
+            win_percentage = (games_won / games_played) * 100
+
             print("\n========== Game Statistics ==========")
             print(f"Games Played : {games_played}")
             print(f"Games Won    : {games_won}")
             print(f"Games Lost   : {games_lost}")
+            print(f"Win Percentage : {win_percentage:.2f}%")
             print("=====================================")
 
             print("Thank you for playing!")
             break
+
 main()

@@ -153,3 +153,14 @@
 - Counter Variables
 - += Operator
 - Tracking Program Data
+
+## Version 13
+
+### New Features
+- Added win percentage calculation
+- Displayed win percentage with 2 decimal places
+
+### New Concepts Learned
+- Percentage Formula
+- Float Formatting (`:.2f`)
+- Converting Data into Meaningful Information
