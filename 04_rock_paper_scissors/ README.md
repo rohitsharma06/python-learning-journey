@@ -16,3 +16,18 @@ A Python console-based Rock Paper Scissors game built version by version while l
 - Lists
 - List Indexing
 - random.choice()
+
+## Version 2
+
+### Features
+- Added complete game logic
+- Detects Win
+- Detects Lose
+- Detects Tie
+
+### New Concepts Learned
+- Complex Conditions
+- Logical Operator (or)
+- Nested Comparisons
+
+
