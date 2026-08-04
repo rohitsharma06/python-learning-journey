@@ -2,18 +2,25 @@ import random
 
 choices = ["rock", "paper", "scissors"]
 
-games_played = 0
-player_wins = 0
-computer_wins = 0
-ties = 0
 
 def get_player_choice(choices):
-    choice = int(input("Enter your choice: "))
-    player_choice = choices[choice-1]
-    return player_choice
+    while True:
+        try:
+            choice = int(input("Enter your choice: "))
+        except ValueError:
+            print("Please enter numbers only.")
+            continue
+
+        if choice < 1 or choice > 3:
+            print("Please enter 1, 2, or 3 only.")
+            continue
+
+        return choices[choice - 1]
+
 
 def get_computer_choice(choices):
     return random.choice(choices)
+
 
 def show_result(player_choice, computer_choice):
     if player_choice == computer_choice:
@@ -21,9 +28,9 @@ def show_result(player_choice, computer_choice):
         return "tie"
 
     elif (
-            (player_choice == "rock" and computer_choice == "scissors") or
-            (player_choice == "paper" and computer_choice == "rock") or
-            (player_choice == "scissors" and computer_choice == "paper")
+        (player_choice == "rock" and computer_choice == "scissors") or
+        (player_choice == "paper" and computer_choice == "rock") or
+        (player_choice == "scissors" and computer_choice == "paper")
     ):
         print("You win!")
         return "player"
@@ -31,6 +38,7 @@ def show_result(player_choice, computer_choice):
     else:
         print("Computer wins!")
         return "computer"
+
 
 def show_statistics(games_played, player_wins, computer_wins, ties):
     print("\n========== Statistics ==========")
@@ -40,20 +48,30 @@ def show_statistics(games_played, player_wins, computer_wins, ties):
     print(f"Tie Games    : {ties}")
     print("================================")
 
+
+games_played = 0
+player_wins = 0
+computer_wins = 0
+ties = 0
+round_number = 1
+
 while True:
 
-    print("====== Rock Paper Scissors ======")
+    print("\n====================================")
+    print("      ROCK PAPER SCISSORS")
+    print("====================================")
+    print(f"Round : {round_number}")
+    print()
 
     print("1. Rock")
     print("2. Paper")
     print("3. Scissors")
 
     player_choice = get_player_choice(choices)
-    print(f"Player Choice : {player_choice}")
+    print(f"\nPlayer Choice   : {player_choice}")
 
     computer_choice = get_computer_choice(choices)
     print(f"Computer Choice : {computer_choice}")
-
 
     result = show_result(player_choice, computer_choice)
 
@@ -67,14 +85,24 @@ while True:
         ties += 1
 
     games_played += 1
+    round_number += 1
 
-    play_again = input("Do you want to play again? (y/n): ")
+    while True:
+        play_again = input("\nDo you want to play again? (y/n): ").lower()
 
-    if play_again == "n":
-        break
+        if play_again == "y":
+            break
 
-show_statistics(games_played, player_wins, computer_wins, ties)
+        elif play_again == "n":
+            show_statistics(
+                games_played,
+                player_wins,
+                computer_wins,
+                ties
+            )
 
+            print("\nThank you for playing!")
+            break
 
-
-
+        else:
+            print("Please enter y or n only.")
