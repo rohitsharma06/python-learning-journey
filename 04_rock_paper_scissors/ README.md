@@ -30,4 +30,31 @@ A Python console-based Rock Paper Scissors game built version by version while l
 - Logical Operator (or)
 - Nested Comparisons
 
+## Version 3
 
+### Features
+- Added Play Again option
+- Added game statistics
+- Counted games played
+- Counted player wins
+- Counted computer wins
+- Counted tie games
+
+### New Concepts Learned
+- while loop
+- Program state
+- Counters
+- Statistics
+
+## Version 4
+
+### Features
+- Added input validation
+- Prevented invalid menu choices
+- Prevented invalid replay input
+- Prevented program crashes
+
+### New Concepts Learned
+- try / except
+- Input validation
+- Defensive programming
