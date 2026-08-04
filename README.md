@@ -75,3 +75,37 @@ The goal of this repository is to:
 - Track my progress project by project.
 - Build a strong GitHub portfolio.
 
+### ✅ 03. Number Guessing Game
+
+A command-line number guessing game built step by step while learning Python.
+
+**Features**
+- Random number generation
+- Three difficulty levels (Easy / Medium / Hard)
+- Limited attempts
+- Win and Game Over messages
+- Play Again option
+- Input validation
+- Game statistics
+- Win percentage calculation
+- Clean and refactored code using functions
+- Professional console output
+
+**Python Concepts Used**
+- Import Modules
+- `random.randint()`
+- Variables
+- Conditional Statements (`if`, `elif`, `else`)
+- Loops (`while`)
+- Functions
+- Parameters & Return
+- Input Validation
+- Exception Handling (`try`, `except`)
+- Counters
+- Formatted Strings (f-strings)
+- Code Refactoring
+
+📁 Project Folder: `03_number_guessing_game`
+
+
+

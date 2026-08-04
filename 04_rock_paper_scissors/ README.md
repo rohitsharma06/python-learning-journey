@@ -58,3 +58,19 @@ A Python console-based Rock Paper Scissors game built version by version while l
 - try / except
 - Input validation
 - Defensive programming
+
+## Version 5
+
+### Features
+- Refactored code using functions
+- Separated player input into a function
+- Separated computer choice into a function
+- Separated result logic into a function
+- Separated statistics display into a function
+
+### New Concepts Learned
+- Function Design
+- Code Refactoring
+- Single Responsibility Principle
+- Returning Values from Functions
+- Clean Code
