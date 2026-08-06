@@ -3,13 +3,20 @@ while True:
     print("========== TO-DO LIST ==========")
     print("1. View Tasks \n2. Add Task \n3. Remove Task \n4. Exit")
     print("===============================")
+    try:
+        choice = int(input("Enter your choice: "))
+    except ValueError:
+        print("Please enter numbers only.")
+        continue
 
-    choice = int(input("Enter your choice: "))
     print(f"You selected: {choice}")
 
     if choice == 1:
-        for i in range(len(tasks)):
-            print(f"{i +1}. {tasks[i]}")
+        if len(tasks) == 0:
+            print("No tasks Available.")
+        else:
+            for i in range(len(tasks)):
+                print(f"{i +1}. {tasks[i]}")
 
     if choice == 2:
         task = input("Enter your task: ")
@@ -17,7 +24,17 @@ while True:
         print("Task Added Successfully")
 
     if choice == 3:
-        task_number = int(input("Enter task number to remove: "))
+
+        if len(tasks) == 0:
+            print("No tasks available to remove.")
+            continue
+
+        try:
+            task_number = int(input("Enter task number to remove: "))
+        except ValueError:
+            print("Please enter numbers only.")
+            continue
+
         if task_number >= 1 and task_number <= len(tasks):
 
             tasks.pop(task_number - 1)

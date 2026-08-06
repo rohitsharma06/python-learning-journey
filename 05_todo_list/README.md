@@ -39,3 +39,19 @@
 - `len()`
 - Input Validation
 - `if...else`
+
+## Version 4
+
+### Features
+- Added input validation for menu choice
+- Added input validation while removing tasks
+- Prevented program crashes on invalid input
+- Displayed message when no tasks are available
+- Displayed message when no tasks are available to remove
+
+### New Concepts Learned
+- try / except
+- ValueError
+- continue
+- Empty list validation
+- Defensive programming
