@@ -1,4 +1,29 @@
-tasks = []
+
+
+def load_tasks():
+    tasks = []
+
+    try:
+        file = open("tasks.txt", "r")
+
+        for task in file:
+            tasks.append(task.strip())
+
+        file.close()
+
+    except FileNotFoundError:
+        pass
+
+    return tasks
+
+tasks = load_tasks()
+
+def save_tasks(tasks):
+    file = open("tasks.txt", "w")
+
+    for task in tasks:
+        file.write(f"{task}\n")
+    file.close()
 
 def show_menu():
     print("\n================================")
@@ -23,8 +48,14 @@ def view_tasks(tasks):
     print("-------------------------------")
 
 def add_task(tasks):
-    task = input("Enter your task: ")
+    task = input("Enter your task: ").strip()
+
+    if task == "":
+        print("Task cannot be empty.")
+        return
+
     tasks.append(task)
+    save_tasks(tasks)
     print(f'"{task}" added successfully.')
 
 def remove_task(tasks):
@@ -41,9 +72,12 @@ def remove_task(tasks):
 
     if task_number >= 1 and task_number <= len(tasks):
         removed_task = tasks.pop(task_number - 1)
+        save_tasks(tasks)
         print(f'"{removed_task}" removed successfully.')
     else:
         print("Invalid Task Number!")
+
+
 
 while True:
 
@@ -54,7 +88,9 @@ while True:
         print("Please enter numbers only.")
         continue
 
-    print(f"You selected: {choice}")
+    if choice < 1 or choice > 4:
+        print("Please enter a number between 1 and 4.")
+        continue
 
     if choice == 1:
         view_tasks(tasks)

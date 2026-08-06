@@ -83,3 +83,28 @@
 - f-string improvements
 - Using the return value of `pop()`
 - User experience (UX) improvements
+
+## Final Features
+
+- Add Tasks
+- View Tasks
+- Remove Tasks
+- Input Validation
+- Professional CLI Interface
+- Persistent Storage using File Handling
+- Clean Code using Functions
+
+## Python Concepts Practiced
+
+- Variables
+- Lists
+- Loops
+- Functions
+- Parameters
+- Return
+- File Handling
+- Exception Handling
+- Input Validation
+- CRUD Operations
+- Code Refactoring
+- User Interface Design
