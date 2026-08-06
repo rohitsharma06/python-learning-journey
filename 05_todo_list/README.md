@@ -26,3 +26,16 @@
 - `len()`
 - List indexing
 - `break`
+## Version 3
+
+### Features
+- Removed tasks using task number
+- Validated task number before removing
+- Displayed message for invalid task numbers
+
+### New Concepts Learned
+- `pop()`
+- List Index
+- `len()`
+- Input Validation
+- `if...else`

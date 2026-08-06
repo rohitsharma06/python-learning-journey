@@ -17,9 +17,14 @@ while True:
         print("Task Added Successfully")
 
     if choice == 3:
-        task_number = input("Enter task number to remove: ")
-        tasks.remove(task_number)
-        print("Task Removed Successfully")
+        task_number = int(input("Enter task number to remove: "))
+        if task_number >= 1 and task_number <= len(tasks):
+
+            tasks.pop(task_number - 1)
+            print("Task Removed Successfully")
+
+        else:
+            print("Invalid Task Number!")
 
     if choice == 4:
         print("Thank you for using To-Do List!")
