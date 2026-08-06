@@ -68,3 +68,18 @@
 - Passing lists as parameters
 - return (to exit a function)
 - Separation of responsibilities
+
+## Version 6
+
+### Features
+- Improved menu design
+- Added professional task list display
+- Improved success messages
+- Displayed removed task name
+- Improved exit screen
+
+### New Concepts Learned
+- Better CLI formatting
+- f-string improvements
+- Using the return value of `pop()`
+- User experience (UX) improvements

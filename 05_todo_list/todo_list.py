@@ -1,24 +1,31 @@
 tasks = []
 
 def show_menu():
-    print("========== TO-DO LIST ==========")
+    print("\n================================")
+    print("         TO-DO LIST")
+    print("================================")
     print("1. View Tasks")
     print("2. Add Task")
     print("3. Remove Task")
     print("4. Exit")
-    print("===============================")
+    print("================================")
 
 def view_tasks(tasks):
+    print("\n---------- Your Tasks ----------")
+
     if len(tasks) == 0:
-        print("No tasks Available.")
+        print("No tasks available.")
+
     else:
         for i in range(len(tasks)):
             print(f"{i + 1}. {tasks[i]}")
 
+    print("-------------------------------")
+
 def add_task(tasks):
     task = input("Enter your task: ")
     tasks.append(task)
-    print("Task Added Successfully")
+    print(f'"{task}" added successfully.')
 
 def remove_task(tasks):
 
@@ -33,8 +40,8 @@ def remove_task(tasks):
         return
 
     if task_number >= 1 and task_number <= len(tasks):
-        tasks.pop(task_number - 1)
-        print("Task Removed Successfully")
+        removed_task = tasks.pop(task_number - 1)
+        print(f'"{removed_task}" removed successfully.')
     else:
         print("Invalid Task Number!")
 
@@ -59,5 +66,8 @@ while True:
         remove_task(tasks)
 
     if choice == 4:
+        print("\n================================")
         print("Thank you for using To-Do List!")
+        print("Have a great day! 😊")
+        print("================================")
         break
