@@ -55,3 +55,16 @@
 - continue
 - Empty list validation
 - Defensive programming
+
+## Version 5
+
+### Features
+- Refactored code using functions
+- Created separate functions for menu, viewing tasks, adding tasks, and removing tasks
+- Improved code readability and maintainability
+
+### New Concepts Learned
+- Function refactoring
+- Passing lists as parameters
+- return (to exit a function)
+- Separation of responsibilities
