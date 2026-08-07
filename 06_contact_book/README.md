@@ -44,3 +44,16 @@
 - Removing a dictionary from a list using `remove()`
 - Using `break` to stop a loop
 - Reusing search logic
+
+## Version 6
+
+### Features
+- Refactored the application using functions
+- Improved code readability
+- Reused functions for each menu option
+
+### New Concepts Learned
+- Function Decomposition
+- Passing Lists as Parameters
+- Modular Programming
+- Clean Code Structure
