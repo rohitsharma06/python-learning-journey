@@ -1,4 +1,41 @@
-contacts = []
+def load_contacts():
+
+    contacts = []
+
+    try:
+        file = open("contacts.txt", "r")
+
+        for line in file:
+
+            name, phone, email = line.strip().split(",")
+
+            contact = {
+                "name": name,
+                "phone": phone,
+                "email": email
+            }
+
+            contacts.append(contact)
+
+        file.close()
+
+    except FileNotFoundError:
+        pass
+
+    return contacts
+
+def save_contacts(contacts):
+
+    file = open("contacts.txt", "w")
+
+    for contact in contacts:
+
+        file.write(f"{contact['name']},{contact['phone']},{contact['email']}\n")
+
+    file.close()
+
+
+contacts = load_contacts()
 
 def show_menu():
     print("========== CONTACT BOOK ==========")
@@ -35,6 +72,7 @@ def add_contact(contacts):
     }
 
     contacts.append(contact)
+    save_contacts(contacts)
 
     print("Contact added successfully.")
 
@@ -65,6 +103,7 @@ def delete_contact(contacts):
 
         if contact["name"] == delete_name:
             contacts.remove(contact)
+            save_contacts(contacts)
             print("Contact deleted successfully.")
             found = True
             break

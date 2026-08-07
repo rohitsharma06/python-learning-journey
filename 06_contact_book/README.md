@@ -57,3 +57,16 @@
 - Passing Lists as Parameters
 - Modular Programming
 - Clean Code Structure
+
+## Version 7 (Final)
+
+### Features
+- Save contacts to a file
+- Load contacts automatically when the program starts
+- Contacts persist after closing the application
+
+### New Concepts Learned
+- Reading from Files
+- Writing to Files
+- Data Persistence
+- Parsing Text using `split()`
