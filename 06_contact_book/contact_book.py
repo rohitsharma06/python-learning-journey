@@ -48,4 +48,16 @@ while True:
         if found == False:
             print("Contact not found")
 
+    if choice == 4:
+        delete_name = input("Enter contact name to delete: ")
+        found = False
+        for contact in contacts:
+            if contact["name"] == delete_name:
+                contacts.remove(contact)
+                print("Contact deleted successfully.")
+                found = True
+                break
+
+        if found == False:
+            print("Contact not found.")
 

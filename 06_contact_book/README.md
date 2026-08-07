@@ -33,3 +33,14 @@
 - Searching in a List of Dictionaries
 - Flag Variable (`found`)
 - Dictionary Access using Keys
+## Version 4
+
+### Features
+- Delete Contact by Name
+- Display success message after deletion
+- Display "Contact not found" when no matching contact exists
+
+### New Concepts Learned
+- Removing a dictionary from a list using `remove()`
+- Using `break` to stop a loop
+- Reusing search logic
