@@ -21,3 +21,15 @@
 - Dictionaries
 - List of Dictionaries
 - Accessing dictionary values using keys
+
+## Version 3
+
+### Features
+- Search Contact by Name
+- Display Contact Details
+- Display "Contact Not Found" message
+
+### New Concepts Learned
+- Searching in a List of Dictionaries
+- Flag Variable (`found`)
+- Dictionary Access using Keys

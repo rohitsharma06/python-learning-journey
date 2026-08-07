@@ -33,3 +33,19 @@ while True:
 
         print("Contact added successfully.")
 
+    if choice == 3:
+        search_name = input("Enter contact name to search: ")
+        found = False
+        for contact in contacts:
+            if contact["name"] == search_name:
+                print("\n---------- Contact Found ----------")
+                print(f"Name  : {contact['name']}")
+                print(f"Phone : {contact['phone']}")
+                print(f"Email : {contact['email']}")
+                print("-----------------------------------")
+                found = True
+
+        if found == False:
+            print("Contact not found")
+
+
