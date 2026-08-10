@@ -1,9 +1,54 @@
-from datetime import  datetime
+from datetime import datetime
 
-expenses = []
 
-next_expense_id = 1
+def load_expenses():
+
+    expenses = []
+
+    try:
+        file = open("expenses.txt", "r")
+
+        for line in file:
+
+            expense_id, amount, description, category, date = line.strip().split(",")
+
+            expense = {
+                "id": int(expense_id),
+                "amount": float(amount),
+                "description": description,
+                "category": category,
+                "date": date
+            }
+
+            expenses.append(expense)
+
+        file.close()
+
+    except FileNotFoundError:
+        pass
+
+    return expenses
+
+
+def save_expenses(expenses):
+
+    file = open("expenses.txt", "w")
+
+    for expense in expenses:
+
+        file.write(
+            f"{expense['id']},"
+            f"{expense['amount']},"
+            f"{expense['description']},"
+            f"{expense['category']},"
+            f"{expense['date']}\n"
+        )
+
+    file.close()
+
+
 def show_menu():
+
     print("========== EXPENSE TRACKER ==========")
     print("1. View Expenses")
     print("2. Add Expense")
@@ -12,6 +57,117 @@ def show_menu():
     print("5. Category Summary")
     print("6. Exit")
     print("=====================================")
+
+
+def view_expenses(expenses):
+
+    if len(expenses) == 0:
+        print("No expenses available.")
+        return
+
+    print("\n---------- Your Expenses ----------")
+
+    for expense in expenses:
+
+        print("----------------------------")
+        print(f"Expense ID: {expense['id']}")
+        print(f"Amount    : ₹{expense['amount']:.2f}")
+        print(f"Details   : {expense['description']}")
+        print(f"Category  : {expense['category']}")
+        print(f"Date      : {expense['date']}")
+
+    print("----------------------------")
+
+
+def add_expense(expenses):
+
+    try:
+        amount = float(input("Enter expense amount: "))
+    except ValueError:
+        print("Please enter a valid amount.")
+        return
+
+    if amount <= 0:
+        print("Amount must be greater than 0.")
+        return
+
+    description = input("Enter expense description: ").strip().title()
+
+    if description == "":
+        print("Description cannot be empty.")
+        return
+
+    category = input("Enter expense category: ").strip().title()
+
+    if category == "":
+        print("Category cannot be empty.")
+        return
+
+    date = datetime.now().strftime("%d-%m-%Y")
+
+    if len(expenses) == 0:
+        expense_id = 1
+    else:
+        expense_id = expenses[-1]["id"] + 1
+
+    expense = {
+        "id": expense_id,
+        "amount": amount,
+        "description": description,
+        "category": category,
+        "date": date
+    }
+
+    expenses.append(expense)
+
+    save_expenses(expenses)
+
+    print("Expense added successfully.")
+
+
+def delete_expense(expenses):
+
+    if len(expenses) == 0:
+        print("No expenses available to delete.")
+        return
+
+    try:
+        expense_id = int(input("Enter expense ID to delete: "))
+    except ValueError:
+        print("Please enter numbers only.")
+        return
+
+    for expense in expenses:
+
+        if expense["id"] == expense_id:
+
+            expenses.remove(expense)
+
+            save_expenses(expenses)
+
+            print(
+                f"₹{expense['amount']:.2f} "
+                f"({expense['description']}) deleted successfully."
+            )
+
+            return
+
+    print("Expense not found.")
+
+
+def total_expenses(expenses):
+
+    if len(expenses) == 0:
+        print("No expenses available.")
+        return
+
+    total = 0
+
+    for expense in expenses:
+        total += expense["amount"]
+
+    print(f"Total Expenses: ₹{total:.2f}")
+
 
 def category_summary(expenses):
 
@@ -38,110 +194,21 @@ def category_summary(expenses):
 
     print("--------------------------------------")
 
-def add_expense(expenses):
 
-    try:
-        amount = float(input("Enter expense amount: "))
-    except ValueError:
-        print("Please enter a valid amount.")
-        return
+expenses = load_expenses()
 
-    if amount <= 0:
-        print("Amount must be greater than 0.")
-        return
-
-    description = input("Enter expense description: ").strip().title()
-    # strip use to remove space and title us to capitalize first letter capital
-
-    if description == "":
-        print("Description cannot be empty")
-        return
-
-    category = input("Enter expense category: ").strip().title()
-    if category == "":
-        print("Category cannot be empty.")
-        return
-
-    date = datetime.now().strftime("%d-%m-%Y")
-    #Jis din expense add hua, us din ki date automatically save karo.
-
-    expense_id = len(expenses) + 1
-    expense = {
-        "id":expense_id,
-        "amount": amount,
-        "description": description,
-        "category": category,
-        "date":date
-
-    }
-
-    expenses.append(expense)
-
-    print("Expense added successfully.")
-
-
-def view_expenses(expenses):
-    if len(expenses) == 0:
-        print("No expenses available.")
-        return
-
-    print("\n---------- Your Expenses ----------")
-
-    for i in range(len(expenses)):
-        print("----------------------------")
-        print(f"Expense Id : {expenses[i]['id']}")
-        print(f"Amount  : ₹{expenses[i]['amount']:.2f}")
-        print(f"Details : {expenses[i]['description']}")
-        print(f"Category: {expenses[i]['category']}")
-        print(f"Date    : {expenses[i]['date']}")
-
-
-    print("----------------------------")
-
-def total_expenses(expenses):
-
-    if len(expenses) == 0:
-        print("No expenses available.")
-        return
-
-    total = 0
-
-    for expense in expenses:
-        total += expense["amount"]
-
-    print(f"Total Expenses: ₹{total:.2f}")
-
-def delete_expense(expenses):
-
-    if len(expenses) == 0:
-        print("No expenses available to delete.")
-        return
-
-    try:
-        expense_number = int(input("Enter expense number to delete: "))
-    except ValueError:
-        print("Please enter numbers only.")
-        return
-
-    if expense_number >= 1 and expense_number <= len(expenses):
-        removed_expense = expenses.pop(expense_number - 1)
-
-        print(
-            f"₹{removed_expense['amount']:.2f} "
-            f"({removed_expense['description']}) deleted successfully."
-        )
-    else:
-        print("Invalid expense number.")
 
 while True:
+
     show_menu()
+
     try:
         choice = int(input("Enter your choice: "))
-    except  ValueError:
+    except ValueError:
         print("Please enter numbers only.")
         continue
 
-    if choice < 1 or  choice > 6 :
+    if choice < 1 or choice > 6:
         print("Please enter a number between 1 and 6.")
         continue
 
@@ -155,10 +222,10 @@ while True:
         delete_expense(expenses)
 
     elif choice == 4:
-       total_expenses(expenses)
+        total_expenses(expenses)
 
     elif choice == 5:
-       category_summary(expenses)
+        category_summary(expenses)
 
     elif choice == 6:
         print("Thank You For Using Expense Tracker")
