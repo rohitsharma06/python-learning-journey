@@ -2,50 +2,46 @@
 
 A beginner-friendly command-line Quiz Game built with Python.
 
-The project is developed in 3 versions, where each version improves the previous one.
+This project was developed in 3 versions, with each version improving the previous version and adding new functionality.
 
 ## Features
-
-### Version 1
 
 - Display quiz questions
 - Display multiple-choice options
 - Accept user answers
+- Validate user input
 - Check answers
 - Calculate score
-- Display final score
-
-### Version 2
-
-- Number-based options
-- Case-insensitive answer handling
-- Extra spaces handled using `strip()`
-- Input validation
-- Invalid option handling
-- Display selected answer
-- Display correct answer when the user is wrong
 - Calculate percentage
+- Display correct answers
 - Display performance message
+- Randomize question order
+- Display question number and total questions
+- Allow the user to play the quiz again
+- Validate replay input
 
 ## Concepts Practiced
 
 - Lists
 - Dictionaries
-- Nested data
-- `for` loops
-- `if / elif / else`
-- `while`/loop control
-- User input
+- Nested data structures
 - Variables
-- Comparisons
+- `for` loops
+- `while` loops
+- `if / elif / else`
 - `try / except`
 - `ValueError`
 - `continue`
+- `break`
+- `exit()`
+- User input
 - String methods
 - `.strip()`
 - `.lower()`
 - `len()`
 - f-strings
+- List indexing
+- `random.shuffle()`
 - Score calculation
 - Percentage calculation
 

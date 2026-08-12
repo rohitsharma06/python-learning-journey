@@ -1,9 +1,12 @@
-questions = [
-    { "question": "What is the capital of India?",
-      "options":["Mumbai", "Delhi", "Kolkata", "Chennai"],
-      "answer": "Delhi"
-      },
+import random
 
+
+questions = [
+    {
+        "question": "What is the capital of India?",
+        "options": ["Mumbai", "Delhi", "Kolkata", "Chennai"],
+        "answer": "Delhi"
+    },
     {
         "question": "Which language are we learning?",
         "options": ["Python", "Java", "C++", "HTML"],
@@ -17,49 +20,72 @@ questions = [
 ]
 
 
-score = 0
-for question in questions:
-    print(question["question"])
+while True:
 
-    for i in range(len(question["options"])):
-        print(f"{i + 1}. {question['options'][i]}")
+    random.shuffle(questions)
 
-    try:
-        answer = int(input("Enter your answer (1-4): "))
-    except ValueError:
-        print("Please enter a number between 1 and 4.")
-        continue
+    score = 0
 
-    if answer < 1 or answer > len(question["options"]):
-        print("Please choose a valid option.")
-        continue
+    for i in range(len(questions)):
 
-    selected_answer = question["options"][answer - 1]
+        question = questions[i]
 
-    print(f"You selected: {selected_answer}")
+        print(f"\nQuestion {i + 1} of {len(questions)}")
+        print(question["question"])
 
-    if selected_answer.lower() == question["answer"].lower():
-        print("Provided Answer is correct")
-        score += 1
+        for j in range(len(question["options"])):
+            print(f"{j + 1}. {question['options'][j]}")
+
+        try:
+            answer = int(input("Enter your answer (1-4): "))
+        except ValueError:
+            print("Please enter a number between 1 and 4.")
+            continue
+
+        if answer < 1 or answer > len(question["options"]):
+            print("Please choose a valid option.")
+            continue
+
+        selected_answer = question["options"][answer - 1]
+
+        print(f"You selected: {selected_answer}")
+
+        if selected_answer.lower() == question["answer"].lower():
+            print("Provided Answer is correct")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is {question['answer']}.")
+
+        print()
+
+    percentage = (score / len(questions)) * 100
+
+    print("========== QUIZ RESULT ==========")
+    print(f"Your Score: {score}/{len(questions)}")
+    print(f"Percentage: {percentage:.2f}%")
+    print("==================================")
+
+    if percentage >= 80:
+        print("     Excellent!")
+    elif percentage >= 50:
+        print("     Good job!")
     else:
-        print(f"Wrong! The correct answer is {question['answer']}.")
+        print("     Keep practicing!")
 
+    print("==================================")
 
+    while True:
 
-    print()
+        play_again = input(
+            "Would you like to play again? (yes/no): "
+        ).strip().lower()
 
-percentage = (score / len(questions)) * 100
+        if play_again == "yes":
+            break
 
-print("========== QUIZ RESULT ==========")
-print(f"Your Score: {score}/{len(questions)}")
-print(f"Percentage: {percentage:.2f}%")
-print("==================================")
+        elif play_again == "no":
+            print("Thank you for playing!")
+            exit()
 
-if percentage >= 80:
-    print("     Excellent!")
-elif percentage >= 50:
-    print("     Good job!")
-else:
-    print("     Keep practicing!")
-
-print("==================================")
+        else:
+            print("Please enter yes or no.")
