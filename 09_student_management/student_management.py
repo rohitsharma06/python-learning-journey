@@ -1,5 +1,7 @@
 students = []
 
+next_student_id = 1
+
 
 def show_menu():
     print("========== STUDENT MANAGEMENT SYSTEM ==========")
@@ -12,6 +14,43 @@ def show_menu():
     print("===============================================")
 
 
+def load_students():
+    students = []
+
+    try:
+        file = open("students.txt", "r")
+
+        for line in file:
+            student_id, name, age, course = line.strip().split(",")
+
+            student = {
+                "id": int(student_id),
+                "name": name,
+                "age": int(age),
+                "course": course
+            }
+
+            students.append(student)
+
+        file.close()
+
+    except FileNotFoundError:
+        pass
+
+    return students
+
+
+def save_students(students):
+    file = open("students.txt", "w")
+
+    for student in students:
+        file.write(
+            f"{student['id']},{student['name']},{student['age']},{student['course']}\n"
+        )
+
+    file.close()
+
+
 def view_students(students):
     if len(students) == 0:
         print("No students available.")
@@ -19,17 +58,19 @@ def view_students(students):
 
     print("\n---------- Students ----------")
 
-    for i in range(len(students)):
+    for student in students:
         print("----------------------------")
-        print(f"Student : {i + 1}")
-        print(f"Name    : {students[i]['name']}")
-        print(f"Age     : {students[i]['age']}")
-        print(f"Course  : {students[i]['course']}")
+        print(f"Student ID : {student['id']}")
+        print(f"Name       : {student['name']}")
+        print(f"Age        : {student['age']}")
+        print(f"Course     : {student['course']}")
 
     print("----------------------------")
 
 
 def add_student(students):
+    global next_student_id
+
     name = input("Enter Student Name: ").strip().title()
 
     if name == "":
@@ -53,12 +94,17 @@ def add_student(students):
         return
 
     student = {
+        "id": next_student_id,
         "name": name,
         "age": age,
         "course": course
     }
 
     students.append(student)
+
+    save_students(students)
+
+    next_student_id += 1
 
     print("Student added successfully.")
 
@@ -69,17 +115,20 @@ def delete_student(students):
         return
 
     try:
-        student_number = int(input("Enter Student Number To Delete: "))
+        student_id = int(input("Enter Student ID To Delete: "))
     except ValueError:
         print("Please enter numbers only.")
         return
 
-    if student_number >= 1 and student_number <= len(students):
-        removed_student = students.pop(student_number - 1)
+    for student in students:
+        if student["id"] == student_id:
+            students.remove(student)
+            save_students(students)
 
-        print(f"{removed_student['name']} deleted successfully.")
-    else:
-        print("Invalid Student Number.")
+            print(f"{student['name']} deleted successfully.")
+            return
+
+    print("Student ID not found.")
 
 
 def search_student(students):
@@ -87,23 +136,23 @@ def search_student(students):
         print("No students available to search.")
         return
 
-    search_name = input("Enter Student Name: ").strip().lower()
-
-    found = False
+    try:
+        student_id = int(input("Enter Student ID To Search: "))
+    except ValueError:
+        print("Please enter numbers only.")
+        return
 
     for student in students:
-        if student["name"].lower() == search_name:
+        if student["id"] == student_id:
             print("\n---------- Student Found ----------")
-            print(f"Name   : {student['name']}")
-            print(f"Age    : {student['age']}")
-            print(f"Course : {student['course']}")
+            print(f"Student ID : {student['id']}")
+            print(f"Name       : {student['name']}")
+            print(f"Age        : {student['age']}")
+            print(f"Course     : {student['course']}")
             print("-----------------------------------")
+            return
 
-            found = True
-            break
-
-    if found == False:
-        print("Student not found.")
+    print("Student ID not found.")
 
 
 def update_student(students):
@@ -111,17 +160,27 @@ def update_student(students):
         print("No students available to update.")
         return
 
-    search_name = input("Enter Student Name: ").strip().lower()
-
-    found = False
+    try:
+        student_id = int(input("Enter Student ID To Update: "))
+    except ValueError:
+        print("Please enter numbers only.")
+        return
 
     for student in students:
-        if student["name"].lower() == search_name:
+        if student["id"] == student_id:
+
             print("\n---------- Student Found ----------")
-            print(f"Name   : {student['name']}")
-            print(f"Age    : {student['age']}")
-            print(f"Course : {student['course']}")
+            print(f"Student ID : {student['id']}")
+            print(f"Name       : {student['name']}")
+            print(f"Age        : {student['age']}")
+            print(f"Course     : {student['course']}")
             print("-----------------------------------")
+
+            new_name = input("Enter New Name: ").strip().title()
+
+            if new_name == "":
+                print("Name cannot be empty.")
+                return
 
             try:
                 new_age = int(input("Enter New Age: "))
@@ -139,16 +198,22 @@ def update_student(students):
                 print("Course cannot be empty.")
                 return
 
+            student["name"] = new_name
             student["age"] = new_age
             student["course"] = new_course
 
+            save_students(students)
+
             print("Student updated successfully.")
+            return
 
-            found = True
-            break
+    print("Student ID not found.")
 
-    if found == False:
-        print("Student not found.")
+
+students = load_students()
+
+if len(students) > 0:
+    next_student_id = max(student["id"] for student in students) + 1
 
 
 while True:
