@@ -2,13 +2,18 @@ balance = 1000.0
 
 current_pin = 1234
 
+transactions = []
+
+
 def show_menu():
     print("========== ATM SIMULATOR ==========")
     print("1. Check Balance")
     print("2. Deposit Money")
     print("3. Withdraw Money")
-    print("4. Exit")
+    print("4. View Transactions")
+    print("5. Exit")
     print("===================================")
+
 
 def verify_pin():
     attempts = 3
@@ -22,7 +27,7 @@ def verify_pin():
 
         if pin == current_pin:
             print("PIN verified successfully.")
-            return  True
+            return True
 
         attempts -= 1
 
@@ -34,10 +39,57 @@ def verify_pin():
     return False
 
 
+def view_transactions():
+    if len(transactions) == 0:
+        print("No transactions available.")
+        return
 
-if not  verify_pin():
-    print("Access Denied")
+    print("\n---------- Transaction History ----------")
+
+    for i in range(len(transactions)):
+        print(f"{i + 1}. {transactions[i]}")
+
+    print("------------------------------------------")
+
+
+def save_data():
+    file = open("atm_data.txt", "w")
+
+    file.write(f"{balance}\n")
+
+    for transaction in transactions:
+        file.write(f"{transaction}\n")
+
+    file.close()
+
+
+def load_data():
+    global balance
+
+    try:
+        file = open("atm_data.txt", "r")
+
+        lines = file.readlines()
+
+        if len(lines) > 0:
+            balance = float(lines[0].strip())
+
+            for line in lines[1:]:
+                transactions.append(line.strip())
+
+        file.close()
+
+    except FileNotFoundError:
+        pass
+
+
+load_data()
+
+
+if not verify_pin():
+    print("Access Denied.")
     exit()
+
 
 while True:
     show_menu()
@@ -50,16 +102,17 @@ while True:
 
     if choice == 1:
         print(f"Current Balance = ₹{balance:.2f}")
+
     elif choice == 2:
 
         try:
             amount = int(input("Enter Deposit Amount: "))
         except ValueError:
-            print("Please enter a valid amount")
+            print("Please enter a valid amount.")
             continue
 
         if amount <= 0:
-            print("Amount must be greater than 0")
+            print("Amount must be greater than 0.")
             continue
 
         if amount > 50000:
@@ -68,9 +121,15 @@ while True:
 
         balance += amount
 
-        print(f"₹{amount:.2f} added successfully")
-        print(f"Current balance is : ₹{balance:.2f}")
+        transactions.append(f"Deposit: ₹{amount:.2f}")
+
+        save_data()
+
+        print(f"₹{amount:.2f} added successfully.")
+        print(f"Current balance is: ₹{balance:.2f}")
+
     elif choice == 3:
+
         try:
             amount = int(input("Enter withdrawal amount: "))
         except ValueError:
@@ -78,7 +137,7 @@ while True:
             continue
 
         if amount <= 0:
-            print("Amount must be greater than 0")
+            print("Amount must be greater than 0.")
             continue
 
         if amount > 10000:
@@ -91,12 +150,20 @@ while True:
 
         balance -= amount
 
-        print(f"₹{amount:.2f}  withdrawal successfully")
-        print(f"Current balance is : ₹{balance:.2f}")
+        transactions.append(f"Withdrawal: ₹{amount:.2f}")
+
+        save_data()
+
+        print(f"₹{amount:.2f} withdrawal successful.")
+        print(f"Current balance is: ₹{balance:.2f}")
 
     elif choice == 4:
-        print("Thank you For using ATM")
-        break
-    else:
-        print("Please choose Valid option")
+        view_transactions()
 
+    elif choice == 5:
+        save_data()
+        print("Thank you for using ATM.")
+        break
+
+    else:
+        print("Please choose a valid option.")
