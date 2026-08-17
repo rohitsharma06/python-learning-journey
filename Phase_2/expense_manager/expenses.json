@@ -3,5 +3,10 @@
         "amount": 432,
         "category": "Food",
         "description": "lunch"
+    },
+    {
+        "amount": 432,
+        "category": "Foo",
+        "description": "lunch"
     }
 ]
